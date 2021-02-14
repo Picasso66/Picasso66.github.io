@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/10/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>my-first-blog</title>
+    <url>/2021/02/13/my-first-blog/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>putty连接</title>
+    <url>/2021/02/14/PUTTY%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<h1 id="PUTTY连接"><a href="#PUTTY连接" class="headerlink" title="PUTTY连接"></a>PUTTY连接</h1><blockquote>
+<h2 id="ssh安装-启动"><a href="#ssh安装-启动" class="headerlink" title="ssh安装 启动"></a>ssh安装 启动</h2></blockquote>
+<blockquote>
+<p>(一般ssh都不是自带的，需要自己安装)</p>
+<ul>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install openssh-server</li>
+</ul>
+<blockquote>
+<p>若显示无法等待缓存锁：无法获得锁</p>
+<p>sudo rm /var/lib/dpkg/lock-frontend</p>
+<p>sudo rm /var/cahe/apt/archives/lock</p>
+<p>sudo rm /var/lib/dpkg/lock</p>
+</blockquote>
+<ul>
+<li><p>查看ssh是否启动</p>
+<p>​    sudo ps -e | grep ssh </p>
+<ul>
+<li><p>有**<em>sshd**</em>就是启动了</p>
+</li>
+<li><p>若没有启动</p>
+<p>sudo service ssh start</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="putty连接"><a href="#putty连接" class="headerlink" title="putty连接"></a>putty连接</h2></blockquote>
+<blockquote>
+<ul>
+<li><p>linux开ssh</p>
+</li>
+<li><p>查看ip</p>
+<p>​    sudo ifconfig -a</p>
+</li>
+<li><p>在putty输入ip</p>
+</li>
+<li><p>用户名bijiasuo</p>
+<p>密码aaxxxxxx（**<em>不显示**</em>）</p>
+</li>
+</ul>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>ubuntu上安装搜狗输入法</title>
+    <url>/2021/02/14/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_37589838/article/details/81208409?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161327484216780266216298%252522%25252C%252522scm%252522%25253A%25252220140713.130102334..%252522%25257D&request_id=161327484216780266216298&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-81208409.pc_search_result_hbase_insert&utm_term=%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8ubuntu%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585+%25E6%2590%259C%25E7%258B%2597%25E8%25BE%2593%25E5%2585%25A5%25E6%25B3%2595%2528%25E5%25B7%25B2%25E7%25BB%258F%25E6%2588%2590%25E5%258A%259F%2529">ubuntu上安装搜狗输入法</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ubuntu常用快捷键</title>
+    <url>/2021/02/13/ubuntu%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="ubuntu常用快捷键"><a href="#ubuntu常用快捷键" class="headerlink" title="ubuntu常用快捷键"></a>ubuntu常用快捷键</h1><ul>
+<li><p>复制粘贴命令</p>
+<ol>
+<li>ctrl + shift + c , ctrl + shift + v</li>
+<li>直接鼠标左键选中要复制的命令，然后在需要粘粘的地方按一下这鼠标滚轮即可。</li>
+</ol>
+</li>
+<li><p>语言切换</p>
+<p>​    ctrl + 空格 或 shift</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>基于ubuntu搭建的hexo</title>
+    <url>/2021/02/14/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAhexo/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/Gage__/article/details/80302471?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161327320616780271542743%252522%25252C%252522scm%252522%25253A%25252220140713.130102334.pc%25255Fall.%252522%25257D&request_id=161327320616780271542743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-80302471.pc_search_result_hbase_insert&utm_term=%25E5%259F%25BA%25E4%25BA%258Eubuntu%25E6%2590%25AD%25E5%25BB%25BAhexo%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2">基于ubuntu搭建hexo</a></p>
+<p><a href="https://www.jianshu.com/p/a3ab83dba041">基于ubuntu搭建hexo(1)</a></p>
+<p><a href="https://www.jianshu.com/p/f7a84b4c5bca">在source/_posts/下生成要写的博客（标题）</a></p>
+<p><a href="https://www.jianshu.com/p/4ba39737969a?utm-campaign">关于阿里云ip设置</a></p>
+<ul>
+<li><p>github xxxx.GitHub.io自动跳转之前绑定的域名</p>
+<p>请一下浏览器的缓存（前提：确定设置好的）</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>搭建LAMP服务器</title>
+    <url>/2021/02/14/%E6%90%AD%E5%BB%BALAMP%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="搭建LAMP服务器"><a href="#搭建LAMP服务器" class="headerlink" title="搭建LAMP服务器"></a>搭建LAMP服务器</h1><ul>
+<li><p>安装Apache2</p>
+<ol>
+<li>sudo apt-get install apache2 -y</li>
+<li>登录http://&lt;ip地址&gt; 可以看到  <strong><em>“it works“</em></strong>  ，安装成功。</li>
+</ol>
+</li>
+<li><p>安装php组件</p>
+<ol>
+<li><p>apt-get 里有 php7.0 ，所以直接安装php7.0；</p>
+<p>​    sudo apt-get install php7.0 -y</p>
+</li>
+<li><p>安装php相关组件；</p>
+<p>​    sudo apt-get install libapache2-mod-php7.0</p>
+</li>
+</ol>
+</li>
+<li><p>安装MySQL服务</p>
+<ol>
+<li><p>安装MySQL；</p>
+<p>​    sudo apt-get install mysql-server -y</p>
+</li>
+<li><p>安装php MySQL相关组件；</p>
+<p>​    sudo apt-get install php7.0-mysql</p>
+</li>
+</ol>
+</li>
+<li><p>安装 phpmyadmin</p>
+<pre><code>1. 使用 apt-get 安装apamyadmin,安装过程中，需要根据提示选择 apache2，
+</code></pre>
+<p>再输入root密码和数据库密码；</p>
+<p>​            sudo apt-get install phpmyadmin -y</p>
+<ol start="2">
+<li><p>建立/var/www/html 下的软连接；</p>
+<p>​    sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin</p>
+</li>
+<li><p>重启MySQL服务；</p>
+<p>​    sudo service mysql restart</p>
+</li>
+<li><p>重启Apcahe服务；</p>
+<p>​    sudo systemctl restart apache2.service</p>
+</li>
+</ol>
+</li>
+<li><p>安装并配置 Wordpress</p>
+<ol>
+<li><p>下载wordpress安装包；</p>
+<p>​    wget <a href="http://cn.wordpress.org/wordpress-4.7.4-zh_CN.zip">http://cn.wordpress.org/wordpress-4.7.4-zh_CN.zip</a></p>
+<ol start="2">
+<li>下载完成后，解压这个安装包</li>
+</ol>
+<p>​    sudo unzip wordpress-4.7.4-zh_CN.zip</p>
+</li>
+<li><p>加压完成后，就能再wordpress文件夹里看到wordpress的源码</p>
+</li>
+<li><p>php默认访问/var/www/html/文件夹，所以我们需要把wordpress文件夹里的文件都复制到/var/www/html/文件夹</p>
+<p>​    sudo mv wordpress/* /var/www/html/</p>
+</li>
+<li><p>修改 /var/www/html/目录权限；</p>
+<p>​    sudo chmod -R 777 /var/www/html/</p>
+</li>
+<li><p>将 apache 指定到index.html</p>
+<p>​    sudo mv /var/www/html/index.html /var/www/html/index~.html</p>
+</li>
+<li><p>重启 Apache 服务</p>
+<p>​    sudo systemctl restart apache2.service </p>
+</li>
+<li><p>输入http://<ip>就能看到worpress界面；</p>
+</li>
+</ol>
+</li>
+<li><p><strong><em>ps</em></strong>：</p>
+<ol>
+<li>apt-get update 是同步 /etc/apt/source.list 和 /etc/apt/source.list.d 中列出的源的索引，这样才能获取到最新软件包；</li>
+<li>apt-get update只是更新了apt的资源列表，没有真正的对系统执行更新。如果需要，要使用apt-get upgrade更新。</li>
+</ol>
+</li>
+</ul>
+]]></content>
+  </entry>
+</search>

@@ -342,4 +342,273 @@
 </ol>
 ]]></content>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2021/02/16/vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="vim常用命令"><a href="#vim常用命令" class="headerlink" title="vim常用命令"></a>vim常用命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">**[上下左右]**h</td>
+<td align="center">向左</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td align="center">向下</td>
+</tr>
+<tr>
+<td align="center">k</td>
+<td align="center">向上</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">向右</td>
+</tr>
+<tr>
+<td align="center">**[行内移动]**w(word)</td>
+<td align="center">向后移动一个单词</td>
+</tr>
+<tr>
+<td align="center">b（back）</td>
+<td align="center">向前移动一个单词</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">行首</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">行首，第一个不是空白字符的位置</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">行尾</td>
+</tr>
+<tr>
+<td align="center">**[行数移动]**gg(go)</td>
+<td align="center">文件顶部</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">文件末尾</td>
+</tr>
+<tr>
+<td align="center">数字gg</td>
+<td align="center">移动到数字对应行数</td>
+</tr>
+<tr>
+<td align="center">数字G</td>
+<td align="center">移动到数字对应行数</td>
+</tr>
+<tr>
+<td align="center">:数字</td>
+<td align="center">移动到数字对应行数</td>
+</tr>
+<tr>
+<td align="center">**[屏幕移动]**Ctrl+b(back)</td>
+<td align="center">向上翻页</td>
+</tr>
+<tr>
+<td align="center">Ctrl+f(forward)</td>
+<td align="center">向下翻页</td>
+</tr>
+<tr>
+<td align="center">H(head)</td>
+<td align="center">屏幕顶部</td>
+</tr>
+<tr>
+<td align="center">M(middle)</td>
+<td align="center">屏幕中间</td>
+</tr>
+<tr>
+<td align="center">L(low)</td>
+<td align="center">屏幕底部</td>
+</tr>
+<tr>
+<td align="center">{[段落移动]</td>
+<td align="center">上一段</td>
+</tr>
+<tr>
+<td align="center">}</td>
+<td align="center">下一段</td>
+</tr>
+<tr>
+<td align="center"><strong>[括号切换]</strong>%</td>
+<td align="center">括号匹配及切换</td>
+</tr>
+<tr>
+<td align="center">mx(mark)[标记]</td>
+<td align="center">添加标记x，x是a-z或A-Z之间的任意一个字母</td>
+</tr>
+<tr>
+<td align="center">‘x</td>
+<td align="center">直接定位到标记x所在位置</td>
+</tr>
+<tr>
+<td align="center">v(选中文本，可和移动命令连用)</td>
+<td align="center">从光标位置开始按照正常模式选择文本(可视模式)</td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="center">选中光标经过的完整行(可视行模式)</td>
+</tr>
+<tr>
+<td align="center">Ctrl+v</td>
+<td align="center">垂直方向选中文本(可视块模式)</td>
+</tr>
+<tr>
+<td align="center">**[撤销和恢复撤销]**u(undo)</td>
+<td align="center">撤销上次命令</td>
+</tr>
+<tr>
+<td align="center">Ctrl+r(redo)</td>
+<td align="center">恢复撤销的命令</td>
+</tr>
+<tr>
+<td align="center">**[删除文本]**x(cut)</td>
+<td align="center">删除光标所在字符，或者选中文字</td>
+</tr>
+<tr>
+<td align="center">d(delete，集合移动命令)</td>
+<td align="center">删除移动命令对应的内容</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">删除光标所在行，可以ndd复制多行</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">删除至行尾</td>
+</tr>
+<tr>
+<td align="center">ps：以上命令常用组合(移动命令)</td>
+<td align="center">dw d0 d} ndd d代码行G d’a</td>
+</tr>
+<tr>
+<td align="center">**[复制，粘粘]**y(copy)</td>
+<td align="center">复制</td>
+</tr>
+<tr>
+<td align="center">yy(copy)</td>
+<td align="center">复制一行，可以nyy复制多行</td>
+</tr>
+<tr>
+<td align="center">p(paste)</td>
+<td align="center">粘粘</td>
+</tr>
+<tr>
+<td align="center">**[替换]**r(replace)</td>
+<td align="center">替换当前字符(命令模式时)</td>
+</tr>
+<tr>
+<td align="center">R(replace)</td>
+<td align="center">替换当前行光标后的字符(替换模式,ESC返回命令模式)</td>
+</tr>
+<tr>
+<td align="center"><strong>[缩排和重复执行]</strong>&gt;&gt;</td>
+<td align="center">向右增加缩进</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">向左减少缩进</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">重复上次命令</td>
+</tr>
+<tr>
+<td align="center">**[查找]/str **(n，N)</td>
+<td align="center">查找str(查找下一个，上一个)</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">向后查找当前光标所在单词</td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">向前查找当前光标所在单词</td>
+</tr>
+<tr>
+<td align="center">可视区域(范围)替换</td>
+<td align="center">:s/旧文本/新文本/g</td>
+</tr>
+<tr>
+<td align="center">全局替换</td>
+<td align="center">:%s/旧文本/新文本/g</td>
+</tr>
+<tr>
+<td align="center">确认替换(n,y,a(所有),q(退出),l(最后一个),^E(向下滚屏),^Y(向上滚屏))</td>
+<td align="center">:%s/旧文本/新文本/gc</td>
+</tr>
+<tr>
+<td align="center">**[插入命令，一下皆可进入编辑模式]**i(insert)</td>
+<td align="center">在当前字符前插入文本</td>
+</tr>
+<tr>
+<td align="center">I(insert)</td>
+<td align="center">在行首插入文本</td>
+</tr>
+<tr>
+<td align="center">a(aapend)</td>
+<td align="center">在当前字符后添加文本</td>
+</tr>
+<tr>
+<td align="center">A(append)</td>
+<td align="center">在行末添加文本</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center">在当前行后面插入一空行</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center">在当前行前面插入一空行</td>
+</tr>
+<tr>
+<td align="center"><strong>[末行命令拓展]</strong>:e .(edit)</td>
+<td align="center">会打开内置的文件浏览器，浏览当前目录下的文件</td>
+</tr>
+<tr>
+<td align="center">:n 文件名(new)</td>
+<td align="center">新建文件</td>
+</tr>
+<tr>
+<td align="center">:w 文件名(write)</td>
+<td align="center">另存为，但仍然编辑当前文件，并不会切换文件</td>
+</tr>
+<tr>
+<td align="center"><strong>[分屏]</strong>:sp 文件名(split)</td>
+<td align="center">横向增加分屏</td>
+</tr>
+<tr>
+<td align="center">:vsp 文件名(vertical split)</td>
+<td align="center">纵向增加分屏</td>
+</tr>
+<tr>
+<td align="center">w(window)</td>
+<td align="center">切换到下一个窗口</td>
+</tr>
+<tr>
+<td align="center">r(reverse)</td>
+<td align="center">互换窗口</td>
+</tr>
+<tr>
+<td align="center">c(close)</td>
+<td align="center">关闭当前窗口，但是不能关闭最后一个窗口</td>
+</tr>
+<tr>
+<td align="center">q(quit)</td>
+<td align="center">推迟当前窗口，如果是最后一个窗口则关闭vi</td>
+</tr>
+<tr>
+<td align="center">o(other)</td>
+<td align="center">关闭其他窗口</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
 </search>

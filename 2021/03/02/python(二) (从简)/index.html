@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="04.if语句4.1 一个简单的示例  cars &#x3D;[‘audi’,’bmw’,’subaru’]  for car in cars: ​    if car &#x3D;&#x3D; ‘bmw’: ​        print(car.upper()) ​    else ​        print(car.title())  Audi BMW Subaru Toyota   这个示例中的循环首先检查当前的汽车名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python(二)(简)">
+<meta property="og:url" content="http://example.com/2021/03/02/python(%E4%BA%8C)%20(%E4%BB%8E%E7%AE%80)/index.html">
+<meta property="og:site_name" content="毕加索的小屋">
+<meta property="og:description" content="04.if语句4.1 一个简单的示例  cars &#x3D;[‘audi’,’bmw’,’subaru’]  for car in cars: ​    if car &#x3D;&#x3D; ‘bmw’: ​        print(car.upper()) ​    else ​        print(car.title())  Audi BMW Subaru Toyota   这个示例中的循环首先检查当前的汽车名">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-02T13:36:55.000Z">
+<meta property="article:modified_time" content="2021-03-03T07:39:39.640Z">
+<meta property="article:author" content="bijiasuo">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/03/02/python(%E4%BA%8C)%20(%E4%BB%8E%E7%AE%80)/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>python(二)(简) | 毕加索的小屋</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">毕加索的小屋</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/02/python(%E4%BA%8C)%20(%E4%BB%8E%E7%AE%80)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bijiasuo">
+      <meta itemprop="description" content="拜托，给我一点时间">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毕加索的小屋">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python(二)(简)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-02 21:36:55" itemprop="dateCreated datePublished" datetime="2021-03-02T21:36:55+08:00">2021-03-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-03 15:39:39" itemprop="dateModified" datetime="2021-03-03T15:39:39+08:00">2021-03-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="04-if语句"><a href="#04-if语句" class="headerlink" title="04.if语句"></a>04.if语句</h2><h3 id="4-1-一个简单的示例"><a href="#4-1-一个简单的示例" class="headerlink" title="4.1 一个简单的示例"></a>4.1 一个简单的示例</h3><blockquote>
+<p> cars =[‘audi’,’bmw’,’subaru’]</p>
+<p> for car in cars:</p>
+<p>​    if car == ‘bmw’:</p>
+<p>​        print(car.upper())</p>
+<p>​    else</p>
+<p>​        print(car.title())</p>
+<hr>
+<p>Audi</p>
+<p>BMW</p>
+<p>Subaru</p>
+<p>Toyota</p>
+</blockquote>
+<ul>
+<li>这个示例中的循环首先检查当前的汽车名是否是’bmw’，如果是，就以全大写的方式打印它：否则就以首字母大写的方式打印</li>
+<li>这个示例涵盖了本章将介绍的很多概念。下面先来介绍可用来在程序中检查条件的测试</li>
+</ul>
+<h3 id="4-2-条件测试"><a href="#4-2-条件测试" class="headerlink" title="4.2 条件测试"></a>4.2 条件测试</h3><ul>
+<li><p>比较字符串和数字，和c一样；</p>
+</li>
+<li><p>检查多个条件时</p>
+<ul>
+<li>使用and(or)检查多个条件 (两个条件之间用and(or))</li>
+<li>为了多个条件看起来方便，每个条件可以加上括号</li>
+</ul>
+</li>
+<li><p>检查特定值是否包含在列表中</p>
+<ul>
+<li><p>使用关键字in</p>
+</li>
+<li><p>例如</p>
+<blockquote>
+<p>re = [‘a’,’b’,’c’]</p>
+<p>‘a’ in re</p>
+<hr>
+<p>True</p>
+</blockquote>
+</li>
+<li><p>检查特定值是否不包含在列表中 将in改为not in</p>
+</li>
+</ul>
+</li>
+<li><p>布尔表达式</p>
+<p>Ture和False</p>
+</li>
+</ul>
+<h3 id="4-3-if语句"><a href="#4-3-if语句" class="headerlink" title="4.3 if语句"></a>4.3 if语句</h3><h4 id="4-3-2-if-else语句"><a href="#4-3-2-if-else语句" class="headerlink" title="4.3.2 if-else语句"></a>4.3.2 if-else语句</h4><p>例子：</p>
+<blockquote>
+<p>age = 17</p>
+<p>if age &gt;= 18</p>
+<p>​    print(‘yes’)</p>
+<p>else:</p>
+<p>​    print(‘no’)</p>
+<hr>
+<p>no</p>
+</blockquote>
+<h4 id="4-3-3-if-elif-else结构"><a href="#4-3-3-if-elif-else结构" class="headerlink" title="4.3.3 if-elif-else结构"></a>4.3.3 if-elif-else结构</h4><p>例子：</p>
+<blockquote>
+<p>age = 12</p>
+<p>if age &lt; 4:</p>
+<p>​    print(‘123’)</p>
+<p>elif age &lt; 18:</p>
+<p>​    print(‘456’)</p>
+<p>else:</p>
+<p>​    print(‘789’)</p>
+<hr>
+<p>456</p>
+</blockquote>
+<ul>
+<li>可以使用多个elif代码块</li>
+<li>最后的else可以省略</li>
+</ul>
+<h3 id="4-4-使用if语句处理列表"><a href="#4-4-使用if语句处理列表" class="headerlink" title="4.4 使用if语句处理列表"></a>4.4 使用if语句处理列表</h3><ul>
+<li><p>可以用来确定列表是否是空的</p>
+<p>例子：</p>
+<blockquote>
+<p>requested = []</p>
+<p>if requested:</p>
+<p>​    print(“yes”)</p>
+<p>else:</p>
+<p>​    print(‘no’)</p>
+<hr>
+<p>no</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="05-字典"><a href="#05-字典" class="headerlink" title="05. 字典"></a>05. 字典</h2><h3 id="5-1-一个简单的字典"><a href="#5-1-一个简单的字典" class="headerlink" title="5.1 一个简单的字典"></a>5.1 一个简单的字典</h3><blockquote>
+<p>a = {‘color’:’green’, ‘point’:5}</p>
+<p>print(a[‘color’])<code>1</code></p>
+<p>print([‘point’])<code>2</code></p>
+<hr>
+<p>green</p>
+<p>5</p>
+</blockquote>
+<h3 id="5-2-使用字典"><a href="#5-2-使用字典" class="headerlink" title="5.2 使用字典"></a>5.2 使用字典</h3><p>在python中，字典是以系列<strong>键-值</strong>对。每个键都与一个值相关联，可以用键来访问与之相关联的值。</p>
+<p>与键相关联的值可以是<strong>数字 字符串 列表</strong>乃至<strong>字典</strong>。事实上，可将任何python对象用作字典中的值。</p>
+<h4 id="5-2-1访问字典中的值"><a href="#5-2-1访问字典中的值" class="headerlink" title="5.2.1访问字典中的值"></a>5.2.1访问字典中的值</h4><p>例如<code>1</code> <code>2</code></p>
+<h4 id="5-2-2-添加键-值对"><a href="#5-2-2-添加键-值对" class="headerlink" title="5.2.2 添加键-值对"></a>5.2.2 添加键-值对</h4><p>字典是一种动态结构，可随时在其中添加键-值对，可依次指定字典名、用方括号括气的键和相关的值。</p>
+<blockquote>
+<p>alien = {‘color’:’green, ‘point’:5}</p>
+<p>print(alien)</p>
+<p>alien[‘x’] = 0</p>
+<p>alien[‘y’] = 25</p>
+<p>print(alien)</p>
+<hr>
+<p>{‘color’:’green, ‘point’:5}</p>
+<p>{‘color’:’green,   ‘point’:5,    ‘x’:0,    ‘y’:25}</p>
+</blockquote>
+<p><strong>注意</strong> python不关心键-值对的添加顺序，而只关心键和值之间的关联关系。</p>
+<h4 id="5-2-3-先创建一个空字典"><a href="#5-2-3-先创建一个空字典" class="headerlink" title="5.2.3 先创建一个空字典"></a>5.2.3 先创建一个空字典</h4><p>alien = {}</p>
+<h4 id="5-2-4-修改字典中的值"><a href="#5-2-4-修改字典中的值" class="headerlink" title="5.2.4 修改字典中的值"></a>5.2.4 修改字典中的值</h4><p>和理想中的修改方法相同</p>
+<h4 id="5-2-5-删除键-值对"><a href="#5-2-5-删除键-值对" class="headerlink" title="5.2.5 删除键-值对"></a>5.2.5 删除键-值对</h4><p><strong>对于字典中不再需要的信息，可使用del语句将相应的键-值对彻底删除。使用del语句时，必须指定字典名和要删除的键。</strong></p>
+<p>eg：del alien(‘point’)</p>
+<p>上面代码行让python将键‘point’从字典alien删除，同时删除与这个键相关联的值。</p>
+<h4 id="5-2-6-由类似对象组成的字典"><a href="#5-2-6-由类似对象组成的字典" class="headerlink" title="5.2.6 由类似对象组成的字典"></a>5.2.6 由类似对象组成的字典</h4><p>在前面的示例中，字典存储的是一个对象的多种信息，但是你也可以使用字典来存储众多对象的同一种信息：</p>
+<p>eg</p>
+<p>favorite_languages = {</p>
+<p>​    ‘a’: ‘python’,</p>
+<p>​    ‘b’:’c’,</p>
+<p>​    ‘c’:’python’,</p>
+<p>​    ‘d’:’java’,     #最后一行也用逗号，方便添加</p>
+<p>​    }</p>
+<p>这种字典，输入人名，就可以直接输出这个人最喜欢的语言</p>
+<h3 id="5-3-遍历字典"><a href="#5-3-遍历字典" class="headerlink" title="5.3 遍历字典"></a>5.3 遍历字典</h3><p>有多种遍历字典的方式：可遍历字典的所有键-值对、键或值</p>
+<h4 id="5-3-1-遍历所有键-值对"><a href="#5-3-1-遍历所有键-值对" class="headerlink" title="5.3.1 遍历所有键-值对"></a>5.3.1 遍历所有键-值对</h4><blockquote>
+<p>user = {</p>
+<p>​    ‘username’: ‘eeee’,</p>
+<p>​    ‘first’:’mmmm’,</p>
+<p>​    ‘last’:’kkkk’,</p>
+<p>​    }</p>
+<p>for k,v in user.items():<code>1</code> # k v是随便设置的临时变量</p>
+<p>​    print(‘\n’ + k)</p>
+<p>​    print(v)</p>
+<hr>
+<p>last</p>
+<p>kkkk</p>
+<p>first</p>
+<p>mmmm</p>
+<p>username</p>
+<p>eeee</p>
+</blockquote>
+<p>注意，即使遍历字典时，键-值对的返回顺序也与存储顺序不同。python不关心键-值对的存储顺序，而只关心键和值之间的关联关系。</p>
+<h4 id="5-3-2-遍历字典中所有的键"><a href="#5-3-2-遍历字典中所有的键" class="headerlink" title="5.3.2 遍历字典中所有的键"></a>5.3.2 遍历字典中所有的键</h4><p>只需要把以上<code>1</code>改为</p>
+<p>for k in user.keys()<code>2</code></p>
+<p><strong>实际上，keys()是可以省略的</strong></p>
+<ul>
+<li><p>user.key()是把字典中的键单独列出来组成一个列表</p>
+</li>
+<li><p>按顺序遍历字典中的所有键</p>
+<ul>
+<li><p>在<code>2</code>基础上修改一下：</p>
+<p>for k in sorted(user.key())</p>
+<p><strong>（这样是按照首字母abcde的顺序）</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-3-遍历字典中的所有值"><a href="#5-3-3-遍历字典中的所有值" class="headerlink" title="5.3.3 遍历字典中的所有值"></a>5.3.3 遍历字典中的所有值</h4><p>同理 将<code>1</code>改为</p>
+<p>for v in user.values()</p>
+<p>上列代码改为</p>
+<p>for v in set(user.values())</p>
+<p>可以把重复的value去掉，结果是一个不重复的列表，其中列出了所有的值。</p>
+<h3 id="5-3-嵌套"><a href="#5-3-嵌套" class="headerlink" title="5.3 嵌套"></a>5.3 嵌套</h3><ul>
+<li> 有时候需要将一系列字典存储在列表中，或将列表作为值存储在字典中</li>
+</ul>
+<h4 id="5-3-1-字典列表"><a href="#5-3-1-字典列表" class="headerlink" title="5.3.1 字典列表"></a>5.3.1 字典列表</h4><p>有时一个字典只包含一个外星人信息，但无法存储第二个外星人信息，更别说所有的外星人信息了。如果创建一个列表，其中每一个外星人都是一个字典，包含有关外星人信息。就可以管理成群结队的外星人了。</p>
+<blockquote>
+<p>alien_0 = {‘color’:’green’,’point’:5}</p>
+<p>alien_1 = {‘color’:’yellow’,’point’:10}</p>
+<p>alien_2 = {‘color’:’blue’,’point’:15}</p>
+<p>aliens = [alien_0,alien_1,alien_2]</p>
+<p>for alien in aliens:</p>
+<p>​    print(alien)</p>
+<hr>
+<p>{‘color’:’green’,’point’:5}</p>
+<p>{‘color’:’yellow’,’point’:10}</p>
+<p>{‘color’:’blue’,’point’:15}</p>
+</blockquote>
+<h4 id="5-3-2-在字典中存储列表"><a href="#5-3-2-在字典中存储列表" class="headerlink" title="5.3.2 在字典中存储列表"></a>5.3.2 在字典中存储列表</h4><p>没什么特殊的，举例</p>
+<blockquote>
+<p>favorite_languages = {</p>
+<p>​    ‘jen’: [‘python’,’ruby’],</p>
+<p>​    ‘sarsh’:[‘c’],</p>
+<p>​    ‘edward’:[‘ruby’,’go’],</p>
+<p>​    ‘phil’:[‘python’,’haskell’],</p>
+<p>​    }</p>
+<p>for name,language in favorite_items():</p>
+<p>​    print(“\n” + name.title() + “ ‘s favorite languages are:”)</p>
+<p>​    for language in languages:</p>
+<p>​        print(“\t” + language.title())</p>
+<hr>
+<p>Jen’s favorite languages are:</p>
+<p>​    Python</p>
+<p>​    Ruby</p>
+<p>Sarch’s favorite languages are:</p>
+<p>​    C</p>
+<p>Phil’s favorite languages are:</p>
+<p>​    Python</p>
+<p>​    Haskell</p>
+<p>Edward’s favorite languages are:</p>
+<p>​    Ruby</p>
+<p>​    Go</p>
+</blockquote>
+<p>以上代码就是输出每个人喜欢的多个语言</p>
+<h4 id="5-4-3-字典中存储字典"><a href="#5-4-3-字典中存储字典" class="headerlink" title="5.4.3 字典中存储字典"></a>5.4.3 字典中存储字典</h4><p>同上</p>
+<blockquote>
+<p>user = {</p>
+<p>​    ‘aeinstein’:{</p>
+<p>​        ‘first’:’albert’,</p>
+<p>​        ‘last’:’elinstein’,</p>
+<p>​        ‘location’:’princeton’,</p>
+<p>​        },</p>
+<p>​    ‘mcurite’:{</p>
+<p>​        ‘first’:’marie’,</p>
+<p>​        ‘last’:’curie’,</p>
+<p>​        ‘location’:’paris’,</p>
+<p>​        },</p>
+<p>​    }</p>
+<p>for username,use_info in user.items():</p>
+<p>​    print(“\nUsername:” + username)</p>
+<p>​    full_name = user_info[‘first’] + “ “ + user_info[‘last’]</p>
+<p>​    location = user_info[‘location’]</p>
+<p>​    print(“\tFull name: “ + full_name.title())</p>
+<p>​    print(“\tLocation:” + location.title())</p>
+<hr>
+<p>Username:aeinstein</p>
+<p>​    Full name: Albert Einstein</p>
+<p>​    Location:Princeton</p>
+<p>Username:mcurie</p>
+<p>​    Full name: Marie Curite</p>
+<p>​    Location: Paris</p>
+</blockquote>
+<h2 id="06-用户输入和while循环"><a href="#06-用户输入和while循环" class="headerlink" title="06.用户输入和while循环"></a>06.用户输入和while循环</h2><h3 id="6-1-函数-input-的工作原理"><a href="#6-1-函数-input-的工作原理" class="headerlink" title="6.1 函数 input()的工作原理"></a>6.1 函数 input()的工作原理</h3><ul>
+<li><p>函数input()让程序暂停运行，等待用户输入一些文本。获取用户输入后，python将其存储在一个变量中，以方便使用。</p>
+<blockquote>
+<p>message = input(“Tell me something”)</p>
+<p>print(message)</p>
+<hr>
+<p>Tell me something  Hello #这个hello是用户输入的</p>
+<p>Hello</p>
+</blockquote>
+</li>
+<li><p>input参数信息一定要用好，要让用户知道这里是填写什么的</p>
+</li>
+</ul>
+<h4 id="6-1-1-使用int-来获取数值输入"><a href="#6-1-1-使用int-来获取数值输入" class="headerlink" title="6.1.1 使用int()来获取数值输入"></a>6.1.1 使用int()来获取数值输入</h4><p>有时你根据input()使用户输入数字，但是python用读取字符串的方式读取数字，导致你无法进行数字的比较时。用int()可以将这个字符串转换成数字表示。</p>
+<blockquote>
+<p>&gt;&gt;&gt;age = input(“how old are you?”)</p>
+<p>how old are you?  21</p>
+<p>&gt;&gt;&gt;age = int (age)</p>
+<p>&gt;&gt;&gt;age &gt;= 18</p>
+<p>Ture</p>
+</blockquote>
+<ul>
+<li>在数值输入用于比较和计算前，务必将其转换为数值表示。</li>
+</ul>
+<h4 id="6-1-2-求模运算符"><a href="#6-1-2-求模运算符" class="headerlink" title="6.1.2 求模运算符"></a>6.1.2 求模运算符</h4><blockquote>
+<p>4 %3 </p>
+<p>7%3</p>
+<hr>
+<p>1</p>
+<p>1</p>
+</blockquote>
+<p>求模运算符不会指出一个数是另一个数的多少倍，而只指出余数是多少。</p>
+<p><strong>n % 2这个运算可以判断一个数是否是偶数</strong></p>
+<h3 id="6-2-while循环介绍"><a href="#6-2-while循环介绍" class="headerlink" title="6.2 while循环介绍"></a>6.2 while循环介绍</h3><p>for循环用于针对集合中的每一个元素都一个代码块，而while循环不断地运行，直到指定的条件不满足为止。</p>
+<h4 id="6-2-1-使用while循环"><a href="#6-2-1-使用while循环" class="headerlink" title="6.2.1 使用while循环"></a>6.2.1 使用while循环</h4><blockquote>
+<p>number = 1</p>
+<p>while number &lt;= 5:</p>
+<p>​    print(number)</p>
+<p>​    number += 1</p>
+<hr>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+</blockquote>
+<h4 id="6-2-2-让用户选择何时退出"><a href="#6-2-2-让用户选择何时退出" class="headerlink" title="6.2.2 让用户选择何时退出"></a>6.2.2 让用户选择何时退出</h4><p>没什么好说的 这个while循环的一个好处就是，可以一直循环，直到你(用户)不想让他循环为止</p>
+<ul>
+<li>为了简化while循环里的语句，可以把while里的条件改成一个<strong>标识</strong>，这个标识在while循环外面被指定ture或false。ture时，循环(程序)继续，false时，循环(程序)结束</li>
+</ul>
+<p><strong>(看不懂也没关系，就是一种简化代码的手段，代码写多了自然就会了)</strong></p>
+<h4 id="6-2-3-使用break退出循环"><a href="#6-2-3-使用break退出循环" class="headerlink" title="6.2.3 使用break退出循环"></a>6.2.3 使用break退出循环</h4><p>和c一样。</p>
+<h4 id="6-2-4-在循环中使用continue"><a href="#6-2-4-在循环中使用continue" class="headerlink" title="6.2.4 在循环中使用continue"></a>6.2.4 在循环中使用continue</h4><p>举例说明一切</p>
+<blockquote>
+<p>number = 0</p>
+<p>while number &lt;= 10:</p>
+<p>​    number += 1</p>
+<p>​    if number % 2 ==0:</p>
+<p>​        continue</p>
+<p>​    print(number)</p>
+<hr>
+<p>1</p>
+<p>3</p>
+<p>5</p>
+<p>7</p>
+<p>9</p>
+</blockquote>
+<p>break 和 continue都是针对当前循环</p>
+<h4 id="6-2-5-避免无限循环"><a href="#6-2-5-避免无限循环" class="headerlink" title="6.2.5 避免无限循环"></a>6.2.5 避免无限循环</h4><p>如果进行了无限循环，可按Ctrl + C，也可以关闭显示程序输出的终端窗口</p>
+<ul>
+<li>有些编译器内嵌了输出窗口，这可能导致循环难以结束，因此不得不关闭编译器来结束无限循环。</li>
+</ul>
+<h3 id="6-3-使用while循环来处理列表和字典"><a href="#6-3-使用while循环来处理列表和字典" class="headerlink" title="6.3 使用while循环来处理列表和字典"></a>6.3 使用while循环来处理列表和字典</h3><p>for循环是一种遍历列表的有效方式，但在for循环中不应该修改列表，否则将导致python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。</p>
+<p><strong>没啥新奇的，有意可看p110</strong></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/02/%E7%8E%8B%E7%88%BD%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/" rel="prev" title="王爽汇编语言笔记">
+      <i class="fa fa-chevron-left"></i> 王爽汇编语言笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/03/python%20(%E4%B8%89)(%E4%BB%8E%E7%AE%80)/" rel="next" title="python(三)(简)">
+      python(三)(简) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#04-if%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">04.if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">4.1 一个简单的示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E6%9D%A1%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 条件测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-if%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.</span> <span class="nav-text">4.3 if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-2-if-else%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.1.</span> <span class="nav-text">4.3.2 if-else语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-3-if-elif-else%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.2.</span> <span class="nav-text">4.3.3 if-elif-else结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E4%BD%BF%E7%94%A8if%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86%E5%88%97%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">4.4 使用if语句处理列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-%E5%AD%97%E5%85%B8"><span class="nav-number">2.</span> <span class="nav-text">05. 字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AD%97%E5%85%B8"><span class="nav-number">2.1.</span> <span class="nav-text">5.1 一个简单的字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E4%BD%BF%E7%94%A8%E5%AD%97%E5%85%B8"><span class="nav-number">2.2.</span> <span class="nav-text">5.2 使用字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1%E8%AE%BF%E9%97%AE%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="nav-number">2.2.1.</span> <span class="nav-text">5.2.1访问字典中的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-%E6%B7%BB%E5%8A%A0%E9%94%AE-%E5%80%BC%E5%AF%B9"><span class="nav-number">2.2.2.</span> <span class="nav-text">5.2.2 添加键-值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-3-%E5%85%88%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E5%AD%97%E5%85%B8"><span class="nav-number">2.2.3.</span> <span class="nav-text">5.2.3 先创建一个空字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-4-%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="nav-number">2.2.4.</span> <span class="nav-text">5.2.4 修改字典中的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-5-%E5%88%A0%E9%99%A4%E9%94%AE-%E5%80%BC%E5%AF%B9"><span class="nav-number">2.2.5.</span> <span class="nav-text">5.2.5 删除键-值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-6-%E7%94%B1%E7%B1%BB%E4%BC%BC%E5%AF%B9%E8%B1%A1%E7%BB%84%E6%88%90%E7%9A%84%E5%AD%97%E5%85%B8"><span class="nav-number">2.2.6.</span> <span class="nav-text">5.2.6 由类似对象组成的字典</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8"><span class="nav-number">2.3.</span> <span class="nav-text">5.3 遍历字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E9%94%AE-%E5%80%BC%E5%AF%B9"><span class="nav-number">2.3.1.</span> <span class="nav-text">5.3.1 遍历所有键-值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8%E4%B8%AD%E6%89%80%E6%9C%89%E7%9A%84%E9%94%AE"><span class="nav-number">2.3.2.</span> <span class="nav-text">5.3.2 遍历字典中所有的键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-3-%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%80%BC"><span class="nav-number">2.3.3.</span> <span class="nav-text">5.3.3 遍历字典中的所有值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%B5%8C%E5%A5%97"><span class="nav-number">2.4.</span> <span class="nav-text">5.3 嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-%E5%AD%97%E5%85%B8%E5%88%97%E8%A1%A8"><span class="nav-number">2.4.1.</span> <span class="nav-text">5.3.1 字典列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-%E5%9C%A8%E5%AD%97%E5%85%B8%E4%B8%AD%E5%AD%98%E5%82%A8%E5%88%97%E8%A1%A8"><span class="nav-number">2.4.2.</span> <span class="nav-text">5.3.2 在字典中存储列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-3-%E5%AD%97%E5%85%B8%E4%B8%AD%E5%AD%98%E5%82%A8%E5%AD%97%E5%85%B8"><span class="nav-number">2.4.3.</span> <span class="nav-text">5.4.3 字典中存储字典</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">06.用户输入和while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%87%BD%E6%95%B0-input-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">3.1.</span> <span class="nav-text">6.1 函数 input()的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-1-%E4%BD%BF%E7%94%A8int-%E6%9D%A5%E8%8E%B7%E5%8F%96%E6%95%B0%E5%80%BC%E8%BE%93%E5%85%A5"><span class="nav-number">3.1.1.</span> <span class="nav-text">6.1.1 使用int()来获取数值输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-2-%E6%B1%82%E6%A8%A1%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.1.2.</span> <span class="nav-text">6.1.2 求模运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-while%E5%BE%AA%E7%8E%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.2.</span> <span class="nav-text">6.2 while循环介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-1-%E4%BD%BF%E7%94%A8while%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.2.1.</span> <span class="nav-text">6.2.1 使用while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-2-%E8%AE%A9%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9%E4%BD%95%E6%97%B6%E9%80%80%E5%87%BA"><span class="nav-number">3.2.2.</span> <span class="nav-text">6.2.2 让用户选择何时退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-3-%E4%BD%BF%E7%94%A8break%E9%80%80%E5%87%BA%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.2.3.</span> <span class="nav-text">6.2.3 使用break退出循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-4-%E5%9C%A8%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8continue"><span class="nav-number">3.2.4.</span> <span class="nav-text">6.2.4 在循环中使用continue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-5-%E9%81%BF%E5%85%8D%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.2.5.</span> <span class="nav-text">6.2.5 避免无限循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E4%BD%BF%E7%94%A8while%E5%BE%AA%E7%8E%AF%E6%9D%A5%E5%A4%84%E7%90%86%E5%88%97%E8%A1%A8%E5%92%8C%E5%AD%97%E5%85%B8"><span class="nav-number">3.3.</span> <span class="nav-text">6.3 使用while循环来处理列表和字典</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bijiasuo</p>
+  <div class="site-description" itemprop="description">拜托，给我一点时间</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bijiasuo</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -176,6 +176,148 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/python%20(%E5%9B%9B)(%E7%AE%80)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bijiasuo">
+      <meta itemprop="description" content="拜托，给我一点时间">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毕加索的小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/04/python%20(%E5%9B%9B)(%E7%AE%80)/" class="post-title-link" itemprop="url">python(四)(简)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-04 14:58:55 / Modified: 15:38:33" itemprop="dateCreated datePublished" datetime="2021-03-04T14:58:55+08:00">2021-03-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="python-四-简"><a href="#python-四-简" class="headerlink" title="python (四)(简)"></a>python (四)(简)</h1><h2 id="08-类"><a href="#08-类" class="headerlink" title="08. 类"></a>08. 类</h2><h3 id="8-1-创建和使用类"><a href="#8-1-创建和使用类" class="headerlink" title="8.1 创建和使用类"></a>8.1 创建和使用类</h3><h4 id="8-1-1-创建dog类"><a href="#8-1-1-创建dog类" class="headerlink" title="8.1.1 创建dog类"></a>8.1.1 创建dog类</h4><blockquote>
+<p>class Dog():<code>1</code></p>
+<p>​    “””一次模拟小狗的简单尝试”””<code>2</code></p>
+<p>​    def _init_ (self,name,age):<code>3</code></p>
+<p>​        “””初始化属性name和age”””</p>
+<p>​        self.name = name<code>4</code></p>
+<p>​        self.age = age</p>
+<p>​    </p>
+<p>​    def sit(self):<code>5</code></p>
+<p>​        “””模拟小狗被命令时蹲下”””</p>
+<p>​        print(self.name.title() + “ is now sitting.”)</p>
+<p>​    def roll_over(self)</p>
+<p>​        “””模拟小狗被命令时打滚”””</p>
+<p>​        print(self.name.title() + “ rolled over!”)</p>
+</blockquote>
+<ul>
+<li><p>在<code>1</code>处，我们定义了一个名为Dog的类。根据约定，在python中，首字母大写的名称指的是类。</p>
+</li>
+<li><p>在<code>2</code>处，我们编写了一个文档字符串，对这个类的功能作了描述</p>
+</li>
+<li><p><strong>方法<em>init\</em>()</strong></p>
+<ul>
+<li><p>类中的函数称为<strong>方法</strong>：你前面学到的有关函数的一切都适用于方法，就目前而言，唯一的重要差别是调用方法的方式。<code>3</code>处的方法<em>init\</em>()是一个特殊的方法，每当你根据Dog类创建新实例时，python都会自动运行它。</p>
+<p>在这个方法名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免python<strong>默认方法</strong>与<strong>普通方法</strong>发生名称冲突。</p>
+</li>
+<li><p>我们将方法<em>init\</em>()定义成了包含三个形参：self、name、和age。在这个方法的定义中，<strong>形参self必不可少</strong>，还必须位于其他形参的前面。因为python调用这个_init_()方法来创建Dog实例时，将自动传入实参self。每个与类相关联的方法调用都自动传递实参self，它是一个指向实例本身的引用，让实例能够访问类中的属性和方法。</p>
+</li>
+<li><p>我们创建Dog实例时，python将调用Dog类的方法_init_()。我们将通过实参向Dog()传递名字和年龄；self会自动传递，因此我们不需要传递它。每当我们根据Dog类穿件实例时，都只需给最后两个形参(name和age)提供值。</p>
+</li>
+<li><p><code>4</code>处定义的两个变量都有前缀self。以self为前缀的变量都可供类中的所有方法使用。我们还可以通过类的任何实例来访问这些变量。self.name = name获取存储在形参name中的值，并将其存储到变量name中，然后该变量被关联到当前创建的实例。</p>
+</li>
+<li><p>像这样可通过实例访问的变量称为<strong>属性</strong></p>
+</li>
+<li><p>Dog类还定义了另外两个方法：sit()和roll_over。由于这些方法不需要额外的信息，例如名字和年龄，因此它们只有一个形参self。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-1-2-根据类创建实例"><a href="#8-1-2-根据类创建实例" class="headerlink" title="8.1.2 根据类创建实例"></a>8.1.2 根据类创建实例</h4><p>可将类视为有关如何创建实力的说明。Dog类是一系列说明，让python知道如何创建表示特定小狗的实例。</p>
+<blockquote>
+<p>class Dog():</p>
+<p>​    –snip--</p>
+<p>my_dog = Dog(‘willie’,6)<code>1</code></p>
+<p>print(“My dog’s name is “ + my_ dog.name.title() + “.”)<code>2</code></p>
+<p>print(“My dog is “ + str(my_dog.age)+ “years old.”)<code>3</code></p>
+</blockquote>
+<p>这里使用的是前一个示例中编写的Dog类。在<code>1</code>处，我们让python创建一个名字为’willie’、年龄在6的小狗。方法_Init_()创建一个表示特定小狗的示例，并使用我们提供的值来设置name和age。方法_Init_()并没有显式包含return语句，但python自动返回一个表示这条小狗的实例。我们将这个实例存储在变量my_dog中。在这里，<strong>命名约定很有用</strong>：我们把首字母大写的名称(Dog)指类，而小写的名称(my_dog)指的是根据类创建的实例。</p>
+<ol>
+<li><p><strong>访问属性</strong></p>
+<p>要访问属性，可以用句点表示法。在<code>2</code>处,我们编写了如下代码来访问my_dog的属性name值：</p>
+<p>my_dog.name</p>
+<p>在Dog中引用这个属性时，使用的时self.name</p>
+</li>
+<li><p><strong>调用方法</strong></p>
+<p>根据Dog类创建实例后，我们就可以使用句点表示法来调用Dog类中定义的任何方法。</p>
+<blockquote>
+<p>my_dog.sit()</p>
+<p>my_dog.roll_over()</p>
+</blockquote>
+</li>
+<li><p>创建多个实例</p>
+<blockquote>
+<p>my_dog = Dog(‘willie’,6)</p>
+<p>your_dog = Dog(‘lucy’,3)</p>
+</blockquote>
+<p>在这个示例中，我们创建了两条小狗，它们分别名为willie和lucy。每条狗都是一个独立的实例，有自己的一组属性，能够执行相同的操作</p>
+</li>
+</ol>
+<h3 id="8-2-使用类和实例（p142）"><a href="#8-2-使用类和实例（p142）" class="headerlink" title="8.2 使用类和实例（p142）"></a>8.2 使用类和实例（p142）</h3><p>给<strong>属性</strong>指定默认值：</p>
+<p>后面加等号数字，没啥说的</p>
+<ul>
+<li><p>创建一个实例的时候：(例子)</p>
+<p>my_new_car = Car(‘audi’,’a4’,’2016’)</p>
+<p>使用该实例的方法的语法：</p>
+<p>my_new_car.(方法名)</p>
+<p>类里的方法形参第一个一定是self,后面才是真正使用的形参(就是c++里的this)</p>
+</li>
+<li><p>其他和正常函数没什么区别</p>
+</li>
+</ul>
+<h3 id="8-3-继承"><a href="#8-3-继承" class="headerlink" title="8.3 继承"></a>8.3 继承</h3><ul>
+<li>编写一个类时，并非总是要从空白开始。如果你要编写的类是另一个类的特殊版本，可使用<strong>继承</strong>。一个类继承另一个类的时候，它将自动获得另一个类的所有属性和方法；原本的类称为父类，而新类是子类。</li>
+<li>往后描述太多 代码过多，自己看书 吧 p147</li>
+</ul>
+<h1 id="终"><a href="#终" class="headerlink" title="终"></a>终</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/python%20(%E4%B8%89)(%E4%BB%8E%E7%AE%80)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2069,65 +2211,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bijiasuo">
-      <meta itemprop="description" content="拜托，给我一点时间">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="毕加索的小屋">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/14/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/" class="post-title-link" itemprop="url">ubuntu上安装搜狗输入法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-02-14 12:12:46 / Modified: 12:12:30" itemprop="dateCreated datePublished" datetime="2021-02-14T12:12:46+08:00">2021-02-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37589838/article/details/81208409?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161327484216780266216298%252522%25252C%252522scm%252522%25253A%25252220140713.130102334..%252522%25257D&request_id=161327484216780266216298&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-81208409.pc_search_result_hbase_insert&utm_term=%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8ubuntu%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585+%25E6%2590%259C%25E7%258B%2597%25E8%25BE%2593%25E5%2585%25A5%25E6%25B3%2595%2528%25E5%25B7%25B2%25E7%25BB%258F%25E6%2588%2590%25E5%258A%259F%2529">ubuntu上安装搜狗输入法</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2197,7 +2280,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

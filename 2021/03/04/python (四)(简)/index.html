@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="python (四)(简)08. 类8.1 创建和使用类8.1.1 创建dog类 class Dog():1 ​    “””一次模拟小狗的简单尝试”””2 ​    def _init_ (self,name,age):3 ​        “””初始化属性name和age””” ​        self.name &#x3D; name4 ​        self.age &#x3D; age ​     ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python(四)(简)">
+<meta property="og:url" content="http://example.com/2021/03/04/python%20(%E5%9B%9B)(%E7%AE%80)/index.html">
+<meta property="og:site_name" content="毕加索的小屋">
+<meta property="og:description" content="python (四)(简)08. 类8.1 创建和使用类8.1.1 创建dog类 class Dog():1 ​    “””一次模拟小狗的简单尝试”””2 ​    def _init_ (self,name,age):3 ​        “””初始化属性name和age””” ​        self.name &#x3D; name4 ​        self.age &#x3D; age ​     ​">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-04T06:58:55.000Z">
+<meta property="article:modified_time" content="2021-03-04T07:38:33.081Z">
+<meta property="article:author" content="bijiasuo">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/03/04/python%20(%E5%9B%9B)(%E7%AE%80)/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>python(四)(简) | 毕加索的小屋</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">毕加索的小屋</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/python%20(%E5%9B%9B)(%E7%AE%80)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bijiasuo">
+      <meta itemprop="description" content="拜托，给我一点时间">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毕加索的小屋">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python(四)(简)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-04 14:58:55 / Modified: 15:38:33" itemprop="dateCreated datePublished" datetime="2021-03-04T14:58:55+08:00">2021-03-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="python-四-简"><a href="#python-四-简" class="headerlink" title="python (四)(简)"></a>python (四)(简)</h1><h2 id="08-类"><a href="#08-类" class="headerlink" title="08. 类"></a>08. 类</h2><h3 id="8-1-创建和使用类"><a href="#8-1-创建和使用类" class="headerlink" title="8.1 创建和使用类"></a>8.1 创建和使用类</h3><h4 id="8-1-1-创建dog类"><a href="#8-1-1-创建dog类" class="headerlink" title="8.1.1 创建dog类"></a>8.1.1 创建dog类</h4><blockquote>
+<p>class Dog():<code>1</code></p>
+<p>​    “””一次模拟小狗的简单尝试”””<code>2</code></p>
+<p>​    def _init_ (self,name,age):<code>3</code></p>
+<p>​        “””初始化属性name和age”””</p>
+<p>​        self.name = name<code>4</code></p>
+<p>​        self.age = age</p>
+<p>​    </p>
+<p>​    def sit(self):<code>5</code></p>
+<p>​        “””模拟小狗被命令时蹲下”””</p>
+<p>​        print(self.name.title() + “ is now sitting.”)</p>
+<p>​    def roll_over(self)</p>
+<p>​        “””模拟小狗被命令时打滚”””</p>
+<p>​        print(self.name.title() + “ rolled over!”)</p>
+</blockquote>
+<ul>
+<li><p>在<code>1</code>处，我们定义了一个名为Dog的类。根据约定，在python中，首字母大写的名称指的是类。</p>
+</li>
+<li><p>在<code>2</code>处，我们编写了一个文档字符串，对这个类的功能作了描述</p>
+</li>
+<li><p><strong>方法<em>init\</em>()</strong></p>
+<ul>
+<li><p>类中的函数称为<strong>方法</strong>：你前面学到的有关函数的一切都适用于方法，就目前而言，唯一的重要差别是调用方法的方式。<code>3</code>处的方法<em>init\</em>()是一个特殊的方法，每当你根据Dog类创建新实例时，python都会自动运行它。</p>
+<p>在这个方法名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免python<strong>默认方法</strong>与<strong>普通方法</strong>发生名称冲突。</p>
+</li>
+<li><p>我们将方法<em>init\</em>()定义成了包含三个形参：self、name、和age。在这个方法的定义中，<strong>形参self必不可少</strong>，还必须位于其他形参的前面。因为python调用这个_init_()方法来创建Dog实例时，将自动传入实参self。每个与类相关联的方法调用都自动传递实参self，它是一个指向实例本身的引用，让实例能够访问类中的属性和方法。</p>
+</li>
+<li><p>我们创建Dog实例时，python将调用Dog类的方法_init_()。我们将通过实参向Dog()传递名字和年龄；self会自动传递，因此我们不需要传递它。每当我们根据Dog类穿件实例时，都只需给最后两个形参(name和age)提供值。</p>
+</li>
+<li><p><code>4</code>处定义的两个变量都有前缀self。以self为前缀的变量都可供类中的所有方法使用。我们还可以通过类的任何实例来访问这些变量。self.name = name获取存储在形参name中的值，并将其存储到变量name中，然后该变量被关联到当前创建的实例。</p>
+</li>
+<li><p>像这样可通过实例访问的变量称为<strong>属性</strong></p>
+</li>
+<li><p>Dog类还定义了另外两个方法：sit()和roll_over。由于这些方法不需要额外的信息，例如名字和年龄，因此它们只有一个形参self。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-1-2-根据类创建实例"><a href="#8-1-2-根据类创建实例" class="headerlink" title="8.1.2 根据类创建实例"></a>8.1.2 根据类创建实例</h4><p>可将类视为有关如何创建实力的说明。Dog类是一系列说明，让python知道如何创建表示特定小狗的实例。</p>
+<blockquote>
+<p>class Dog():</p>
+<p>​    –snip--</p>
+<p>my_dog = Dog(‘willie’,6)<code>1</code></p>
+<p>print(“My dog’s name is “ + my_ dog.name.title() + “.”)<code>2</code></p>
+<p>print(“My dog is “ + str(my_dog.age)+ “years old.”)<code>3</code></p>
+</blockquote>
+<p>这里使用的是前一个示例中编写的Dog类。在<code>1</code>处，我们让python创建一个名字为’willie’、年龄在6的小狗。方法_Init_()创建一个表示特定小狗的示例，并使用我们提供的值来设置name和age。方法_Init_()并没有显式包含return语句，但python自动返回一个表示这条小狗的实例。我们将这个实例存储在变量my_dog中。在这里，<strong>命名约定很有用</strong>：我们把首字母大写的名称(Dog)指类，而小写的名称(my_dog)指的是根据类创建的实例。</p>
+<ol>
+<li><p><strong>访问属性</strong></p>
+<p>要访问属性，可以用句点表示法。在<code>2</code>处,我们编写了如下代码来访问my_dog的属性name值：</p>
+<p>my_dog.name</p>
+<p>在Dog中引用这个属性时，使用的时self.name</p>
+</li>
+<li><p><strong>调用方法</strong></p>
+<p>根据Dog类创建实例后，我们就可以使用句点表示法来调用Dog类中定义的任何方法。</p>
+<blockquote>
+<p>my_dog.sit()</p>
+<p>my_dog.roll_over()</p>
+</blockquote>
+</li>
+<li><p>创建多个实例</p>
+<blockquote>
+<p>my_dog = Dog(‘willie’,6)</p>
+<p>your_dog = Dog(‘lucy’,3)</p>
+</blockquote>
+<p>在这个示例中，我们创建了两条小狗，它们分别名为willie和lucy。每条狗都是一个独立的实例，有自己的一组属性，能够执行相同的操作</p>
+</li>
+</ol>
+<h3 id="8-2-使用类和实例（p142）"><a href="#8-2-使用类和实例（p142）" class="headerlink" title="8.2 使用类和实例（p142）"></a>8.2 使用类和实例（p142）</h3><p>给<strong>属性</strong>指定默认值：</p>
+<p>后面加等号数字，没啥说的</p>
+<ul>
+<li><p>创建一个实例的时候：(例子)</p>
+<p>my_new_car = Car(‘audi’,’a4’,’2016’)</p>
+<p>使用该实例的方法的语法：</p>
+<p>my_new_car.(方法名)</p>
+<p>类里的方法形参第一个一定是self,后面才是真正使用的形参(就是c++里的this)</p>
+</li>
+<li><p>其他和正常函数没什么区别</p>
+</li>
+</ul>
+<h3 id="8-3-继承"><a href="#8-3-继承" class="headerlink" title="8.3 继承"></a>8.3 继承</h3><ul>
+<li>编写一个类时，并非总是要从空白开始。如果你要编写的类是另一个类的特殊版本，可使用<strong>继承</strong>。一个类继承另一个类的时候，它将自动获得另一个类的所有属性和方法；原本的类称为父类，而新类是子类。</li>
+<li>往后描述太多 代码过多，自己看书 吧 p147</li>
+</ul>
+<h1 id="终"><a href="#终" class="headerlink" title="终"></a>终</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/03/python%20(%E4%B8%89)(%E4%BB%8E%E7%AE%80)/" rel="prev" title="python(三)(简)">
+      <i class="fa fa-chevron-left"></i> python(三)(简)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-%E5%9B%9B-%E7%AE%80"><span class="nav-number">1.</span> <span class="nav-text">python (四)(简)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#08-%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">08. 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E7%B1%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">8.1 创建和使用类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-1-%E5%88%9B%E5%BB%BAdog%E7%B1%BB"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">8.1.1 创建dog类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-2-%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">8.1.2 根据类创建实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AE%9E%E4%BE%8B%EF%BC%88p142%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">8.2 使用类和实例（p142）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-%E7%BB%A7%E6%89%BF"><span class="nav-number">1.1.3.</span> <span class="nav-text">8.3 继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88"><span class="nav-number">2.</span> <span class="nav-text">终</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bijiasuo</p>
+  <div class="site-description" itemprop="description">拜托，给我一点时间</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bijiasuo</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
